@@ -1,0 +1,12 @@
+document.addEventListener('mousemove', parallax);
+
+function parallax(évènement) {
+    this.querySelectorAll('.effect').forEach((shift) => {
+
+        const position = shift.getAttribute("value");
+        const x = (window.innerWidth - évènement.pageX * position) / 90;
+        const y = (window.innerHeight - évènement.pageY * position) / 90;
+
+        shift.style.transform = `translateX(${x}px) translateY(${y}px)`;
+    });
+};
